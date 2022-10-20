@@ -1,4 +1,3 @@
-from email.policy import default
 from traceback import print_tb
 import speech_recognition as sr
 import pyttsx3
@@ -7,6 +6,7 @@ import stringManipulation
 
 r = sr.Recognizer()
 keyPhrase = "Hey assistant"
+    
 
 def SpeakText(command):
     engine = pyttsx3.init()
@@ -15,21 +15,25 @@ def SpeakText(command):
 
 def determineCommand(command):
     match command[0]:
-        case "search":
+        case "request":
             webSearching.internetSearch(command[1])
         case _:
             print("Unknown command!")
+
+counter = 0
 
 while(True):
     try:
         with sr.Microphone() as source2:
             r.adjust_for_ambient_noise(source2, duration=0.8)
 
-            audio2 = r.listen(source2, phrase_time_limit=2)
+            audio2 = r.listen(source2, phrase_time_limit=4)
+            #print("Up and listening:")
             MyText = r.recognize_google(audio2)
-            print(MyText)
             MyText = MyText.lower()
-            print("Input: " + MyText)
+            print(f'{counter:d} Input: {MyText:45s}')
+            
+            counter += 1
 
             if(MyText == "terminate"): break;
 
