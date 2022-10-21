@@ -1,4 +1,3 @@
-from traceback import print_tb
 import speech_recognition as sr
 import pyttsx3
 import webSearching
@@ -17,6 +16,11 @@ def determineCommand(command):
     match command[0]:
         case "request":
             webSearching.internetSearch(command[1])
+        
+        case "define":
+            webSearching.dictSearch(command[1])
+        
+        
         case _:
             print("Unknown command!")
 
