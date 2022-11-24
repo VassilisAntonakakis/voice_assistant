@@ -1,0 +1,11 @@
+# request <search term>
+Opens a new tab on the default system browser and quiries the Google search engine for the search term
+
+# exact request <search term> include <include term>, ..., exclude <exclude term>, ...
+Opens a new tab on the default system browser and executes an advanced search of the search term.
+Takes optional parameters for including and excluding certain keywords from the results. 
+Note that you have to repeat the word include or exclude for every term you want to apply the command to
+ie. exact search music exclude movies include bach include motzart
+
+# get weather
+Prints the current weather as well as the weather forcast for the next days in the terminal
