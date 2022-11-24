@@ -13,4 +13,4 @@ def exactSearch(searchTerm):
     print(url)
     webbrowser.open_new_tab(url)
 
-internetSearch("music -movie")
+#internetSearch("music -movie")
