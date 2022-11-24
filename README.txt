@@ -11,3 +11,8 @@ Instructions on adding new commands:
 5)Find a keyword that invokes a call to your scripts driver function and add the statement "elif "<keyword>" in command
 6)Call the scripts driver function by typing <filename>.<function-name>()
 7)Make sure to properly claim your contribution at the start of your script by putting your name in a comment
+
+Library dependancies:
+-speech_recognition
+-pyttsx3
+-webbrowser
