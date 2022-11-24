@@ -1,4 +1,5 @@
 This is a small attempt to create a simple voice assistant to help you in tasks with web searching and browsing or any other task you may think.
+You can find the current active commands in the Commands file.
 
 One of the main problems at the current stage is the low accuracy of the google speech-to-text conversion that this project uses
 
@@ -11,6 +12,7 @@ Instructions on adding new commands:
 5)Find a keyword that invokes a call to your scripts driver function and add the statement "elif "<keyword>" in command
 6)Call the scripts driver function by typing <filename>.<function-name>()
 7)Make sure to properly claim your contribution at the start of your script by putting your name in a comment
+8)Update the Commands file accordingly to include your command after the character '#' followed by a short description of its use
 
 Library dependancies:
 -speech_recognition
