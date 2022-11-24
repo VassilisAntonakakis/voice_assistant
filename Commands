@@ -9,3 +9,6 @@ ie. exact search music exclude movies include bach include motzart
 
 # get weather
 Prints the current weather as well as the weather forcast for the next days in the terminal
+
+# get current weather
+Prints the current weather in the terminal
