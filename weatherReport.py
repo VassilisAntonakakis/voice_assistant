@@ -1,5 +1,6 @@
 '''
 Created by Vassilis Antonakakis on 24/11/2022
+Code by Abdou Rockikz - www.thepythoncode.com
 '''
 
 import requests
