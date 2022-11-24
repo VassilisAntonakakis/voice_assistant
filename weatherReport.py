@@ -67,7 +67,7 @@ def get_weather_data(url):
     result['next_days'] = next_days
     return result
 
-def getWeather():
+def getWeather(command):
     URL = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
     import argparse
     parser = argparse.ArgumentParser(description="Quick Script for Extracting Weather data using Google Weather")
@@ -88,9 +88,10 @@ def getWeather():
     print("Precipitation:", data["precipitation"])
     print("Humidity:", data["humidity"])
     print("Wind:", data["wind"])
-    print("Next days:")
-    for dayweather in data["next_days"]:
-        print("="*40, dayweather["name"], "="*40)
-        print("Description:", dayweather["weather"])
-        print(f"Max temperature: {dayweather['max_temp']}°C")
-        print(f"Min temperature: {dayweather['min_temp']}°C")
+    if "current" not in command:
+        print("Next days:")
+        for dayweather in data["next_days"]:
+            print("="*40, dayweather["name"], "="*40)
+            print("Description:", dayweather["weather"])
+            print(f"Max temperature: {dayweather['max_temp']}°C")
+            print(f"Min temperature: {dayweather['min_temp']}°C")

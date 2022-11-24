@@ -41,7 +41,7 @@ while(True):
 
             if(MyText == "terminate"): break;
 
-            commandTokens = stringManipulation.commandTokenizer(MyText)
+            commandTokens = stringManipulation.commandParser(MyText)
             print(commandTokens[0])
 
             determineCommand(commandTokens)
