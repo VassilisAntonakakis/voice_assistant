@@ -54,15 +54,9 @@ def get_weather_data(url):
     return result
 
 def getWeather(command):
+    # URL for weather query to Google
     URL = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
-    import argparse
-    parser = argparse.ArgumentParser(description="Quick Script for Extracting Weather data using Google Weather")
-    parser.add_argument("region", nargs="?", help="""Region to get weather for, must be available region.
-                                    Default is your current location determined by your IP Address""", default="")
-    # parse arguments
-    args = parser.parse_args()
-    region = args.region
-    URL += region
+
     # get data
     data = get_weather_data(URL)
 
