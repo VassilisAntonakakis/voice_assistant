@@ -1,3 +1,7 @@
+'''
+Created by Vassilis Antonakakis on 20/10/2022
+'''
+
 import webbrowser
 
 def internetSearch(searchTerm):

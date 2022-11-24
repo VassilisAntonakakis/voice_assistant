@@ -1,27 +1,12 @@
+'''
+Created by Vassilis Antonakakis on 24/11/2022
+'''
+
 import requests
 from bs4 import BeautifulSoup as bs
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
 LANGUAGE = "en-US,en;q=0.5"
-
-'''def get_ip():
-    response = requests.get('https://api64.ipify.org?format=json').json()
-    return response["ip"]
-
-
-def get_location():
-    ip_address = get_ip()
-    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
-    location_data = {
-        #"ip": ip_address,
-        "city": response.get("city"),
-        #"region": response.get("region"),
-       #"country": response.get("country_name")
-    }
-    return location_data
-
-def get_City():
-    return get_location()['city']'''
 
 def get_weather_data(url):
     session = requests.Session()
