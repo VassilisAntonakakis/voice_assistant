@@ -18,3 +18,4 @@ Library dependancies:
 -speech_recognition
 -pyttsx3
 -webbrowser
+-pyaudio
