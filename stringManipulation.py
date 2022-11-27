@@ -1,7 +1,3 @@
-'''
-Created by Vassilis Antonakakis on 20/10/2022
-'''
-
 import weatherReport
 
 def strReconstruct(partsList, index):
@@ -15,7 +11,7 @@ def strReconstruct(partsList, index):
     tempTerm = tempTerm.strip()
     return tempTerm
 
-def commandParser(command):
+def commandTokenizer(command):
 
     if "exact request" in command:
         tokenList = command.split()
@@ -43,7 +39,7 @@ def commandParser(command):
             tokenList[1] = strReconstruct(tempTokenList, 0)
         return tokenList
     elif "weather" in command:
-        weatherReport.getWeather(command)
+        weatherReport.getWeather()
 
 
 #commandTokenizer("get weather")
