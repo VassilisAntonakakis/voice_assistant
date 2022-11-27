@@ -1,13 +1,27 @@
-'''
-Created by Vassilis Antonakakis on 24/11/2022
-Code by Abdou Rockikz - www.thepythoncode.com
-'''
-
 import requests
 from bs4 import BeautifulSoup as bs
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
 LANGUAGE = "en-US,en;q=0.5"
+
+'''def get_ip():
+    response = requests.get('https://api64.ipify.org?format=json').json()
+    return response["ip"]
+
+
+def get_location():
+    ip_address = get_ip()
+    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+    location_data = {
+        #"ip": ip_address,
+        "city": response.get("city"),
+        #"region": response.get("region"),
+       #"country": response.get("country_name")
+    }
+    return location_data
+
+def get_City():
+    return get_location()['city']'''
 
 def get_weather_data(url):
     session = requests.Session()
@@ -53,10 +67,16 @@ def get_weather_data(url):
     result['next_days'] = next_days
     return result
 
-def getWeather(command):
-    # URL for weather query to Google
+def getWeather():
     URL = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
-
+    import argparse
+    parser = argparse.ArgumentParser(description="Quick Script for Extracting Weather data using Google Weather")
+    parser.add_argument("region", nargs="?", help="""Region to get weather for, must be available region.
+                                    Default is your current location determined by your IP Address""", default="")
+    # parse arguments
+    args = parser.parse_args()
+    region = args.region
+    URL += region
     # get data
     data = get_weather_data(URL)
 
@@ -68,10 +88,9 @@ def getWeather(command):
     print("Precipitation:", data["precipitation"])
     print("Humidity:", data["humidity"])
     print("Wind:", data["wind"])
-    if "current" not in command:
-        print("Next days:")
-        for dayweather in data["next_days"]:
-            print("="*40, dayweather["name"], "="*40)
-            print("Description:", dayweather["weather"])
-            print(f"Max temperature: {dayweather['max_temp']}°C")
-            print(f"Min temperature: {dayweather['min_temp']}°C")
+    print("Next days:")
+    for dayweather in data["next_days"]:
+        print("="*40, dayweather["name"], "="*40)
+        print("Description:", dayweather["weather"])
+        print(f"Max temperature: {dayweather['max_temp']}°C")
+        print(f"Min temperature: {dayweather['min_temp']}°C")
