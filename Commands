@@ -1,3 +1,6 @@
+# terminate
+Terminates the active listener
+
 # request <search term>
 Opens a new tab on the default system browser and quiries the Google search engine for the search term
 
