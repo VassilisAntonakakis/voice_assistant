@@ -5,6 +5,8 @@ One of the main problems at the current stage is the low accuracy of the google 
 
 Instructions on adding new commands:
 
+Before you start, fork (upper right corner) the code to a personal repo
+
 1)Create your command on a python script
 2)Keep your code clean and clear and set a function that can be called to execute the operation
 3)Go to the stringManipulation.py and import your file
@@ -13,6 +15,7 @@ Instructions on adding new commands:
 6)Call the scripts driver function by typing <filename>.<function-name>()
 7)Make sure to properly claim your contribution at the start of your script by putting your name in a comment
 8)Update the Commands file accordingly to include your command after the character '#' followed by a short description of its use
+9)Create a new pull request to upload your changes to main
 
 Library dependancies:
 -speech_recognition
