@@ -1,4 +1,5 @@
 import weatherReport
+import getTime
 
 def strReconstruct(partsList, index):
     tempTerm = ""
@@ -40,6 +41,8 @@ def commandTokenizer(command):
         return tokenList
     elif "weather" in command:
         weatherReport.getWeather()
+    elif "time" in command:
+        getTime.Time_In_the_World()
 
 
 #commandTokenizer("get weather")

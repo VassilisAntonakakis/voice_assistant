@@ -41,5 +41,4 @@ def main():
             except:
                 r = sr.Recognizer()
     
-
-#main()
+main()
